@@ -3,7 +3,7 @@ import numpy as np
 import re 
 import pandas as pd
 from tqdm import tqdm 
-from utils import fullwidth_to_halfwidth, remove_english
+from .utils import fullwidth_to_halfwidth, remove_english
 
 class main:
     
