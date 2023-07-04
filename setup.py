@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name='volcab_finding',
+    name='VolcabFinding',
     version='1.0',
     author='bananaiselite',
     author_email='dashcamp057@gmail.com',
