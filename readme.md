@@ -1,10 +1,17 @@
 ## **新詞探勘**
-
-### ***使用目的:***
+======
+### ***目的:***
 在做中文斷詞的時候，有時候效果不盡理想，需要靠字典來加強，但是建立字典曠日廢時，靠自由度與凝合度可以幫助您快速建立字典
-### ***使用方法:***
-pip install git+https://github.com/bananaiselite/Word-PMI-Entropy.git
-
+### ***方法:***
+* 安裝
+ > pip install git+https://github.com/bananaiselite/Word-PMI-Entropy.git
+* 使用
+```
+abcde
+```
+### ***函式說明:***
+***檔案 : volcab_finding.py***
+------
 ***n_gram_words:***
 從原文中擷取從 1 到 n_gram 長度的字串，並作為單詞計算詞頻。
 
