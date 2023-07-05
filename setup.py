@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-    name='volcab_finging',
+    name='volcab_finding',
     version='1.0',
     install_requires=['pandas',
                       'numpy'],
