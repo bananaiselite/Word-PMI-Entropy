@@ -3,13 +3,13 @@ import numpy as np
 import re 
 import pandas as pd
 from tqdm import tqdm 
-from .utils import fullwidth_to_halfwidth, remove_english
+from .utils import fullwidth_to_halfwidth, remove_english, words_check
 
 class main:
     
     def __init__(self):
         
-        self.stopwords = ['【','】',')','(','、','，','“','”','。','\n','《','》',' ','-','！','？','.','\\','[',']','：','/','.','"','\u3000','’','．',',','…','?','「','」', '+']
+        self.stopwords = ['【','】',')','(','、','，','“','”','。','\n','《','》',' ','-','！','？','.','\\','[',']','：','/','.','"','\u3000','’','．',',','…','?','「','」', '+', ":", "→", "$", "%"]
             
     
     def n_gram_words(self, text, n_gram):
@@ -86,7 +86,7 @@ class main:
         
         # 若字串為純數字則跳過
         for word in condinate_words:
-            if word.isnumeric():
+            if words_check(word):
                 continue
 
             try:
@@ -113,7 +113,7 @@ class main:
     def run(self,
             text ,
             max_len = 6,
-            min_p =4, 
+            min_p = 4, 
             min_e = 2):
         
         """
@@ -129,10 +129,10 @@ class main:
         # 去除文字中停用字詞
         for s in self.stopwords :
             text = text.replace(s, "")
-        
 
         n_gram = self.n_gram_words(text, max_len)
         condinate = self.PMI_filter(n_gram , min_p)
+        del n_gram
         final = set(self.Entropy_left_right_filter(condinate, text, min_e))
         
         return final

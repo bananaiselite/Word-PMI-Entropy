@@ -6,9 +6,15 @@
 * 安裝
  > pip install git+https://github.com/bananaiselite/Word-PMI-Entropy.git
 * 使用
+```python
+from volcab_finding import volcab_finding
+
+vol = volcab_finding()
+vol.run()
 ```
-abcde
-```
+* 注意
+此方法要使用在文章數量大或長篇文章中效果較佳，且勿使用單篇或短文，可去example中看使用範例
+
 ### ***函式說明:***
 ***檔案 : volcab_finding.py***
 

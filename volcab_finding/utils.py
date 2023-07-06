@@ -19,3 +19,17 @@ def remove_english(text):
     pattern = r'[a-zA-Z]'
     removed_text = re.sub(pattern, '', text)
     return removed_text
+
+
+def words_check(string):
+    """
+    檢查字串是否只包含數字或符號
+    """
+
+    pattern = r'^[0-9!@#$% ^&*\(\)-_=+\[\]\{\}\\|;:\'\",./<>?`~]+$'
+    match = re.match(pattern, string)
+
+    if match:
+        return True
+    else:
+        return False
