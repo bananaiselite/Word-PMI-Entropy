@@ -10,7 +10,16 @@
 from volcab_finding import volcab_finding
 
 vol = volcab_finding()
-vol.run()
+vol.run(
+        # 要探勘的文本
+        text ,
+        # 最大的單詞探勘長度，越大運算量越高，太小會無法抓出單詞，Ex: max_len=3時，會無法抓出智慧型手機
+        max_len = 6,
+        # 自由度門檻
+        min_p = 4, 
+        # Entropy門檻
+        min_e = 2)
+
 ```
 * 注意
 此方法要使用在文章數量大或長篇文章中效果較佳，且勿使用單篇或短文，可去example中看使用範例
